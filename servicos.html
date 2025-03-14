@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços - Ericson Contabilidade</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <section class="header">
+            <div class="Inicio"></div>
+            <nav id="navbar">
+                <span style="color: black; font-size: 1.5em; font-weight: bold;" id="nav_logo">Ericson Contabilidade</span>
+                <ul id="nav_list">
+                    <li class="nav-item"><a href="index.html">Início</a></li>
+                    <li class="nav-item"><a href="sobre.html">Sobre Nós</a></li>
+                    <li class="nav-item active"><a href="servicos.html">Serviços</a></li>
+                    <li class="nav-item"><a href="contato.html">Contato</a></li>
+                </ul>
+                <button class="btn-default">Entre em contato conosco</button>
+                <button id="mobile_btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </nav>
+            <div id="mobile_menu">
+                <ul id="mobile_nav_list">
+                    <li class="nav-item"><a href="index.html">Início</a></li>
+                    <li class="nav-item"><a href="sobre.html">Sobre Nós</a></li>
+                    <li class="nav-item"><a href="servicos.html">Serviços</a></li>
+                    <li class="nav-item"><a href="contato.html">Contato</a></li>
+                </ul>
+                <button class="btn-default">Entre em contato conosco</button>
+            </div>
+        </section>
+    </header>
+    <!-- Seção Serviços -->
+    <section id="servicos">
+        <h2>Nossos Serviços</h2>
+        <div class="servicos-lista">
+            <div class="servico-item bg-amarelo" onclick="redirectToWhatsApp('Abertura de Empresas')">
+                <i class="fas fa-building"></i>
+                <h3>Abertura de Empresas</h3>
+                <p>Facilitamos todo o processo de abertura da sua empresa.</p>
+            </div>
+            <div class="servico-item bg-branco" onclick="redirectToWhatsApp('Assessoria MEI')">
+                <i class="fas fa-user-tie"></i>
+                <h3>Assessoria MEI</h3>
+                <p>Suporte completo para Microempreendedores Individuais.</p>
+            </div>
+            <div class="servico-item bg-amarelo" onclick="redirectToWhatsApp('Assessoria Contábil')">
+                <i class="fas fa-chart-line"></i>
+                <h3>Assessoria Contábil</h3>
+                <p>Planejamento financeiro e contábil para sua empresa.</p>
+            </div>
+            <div class="servico-item bg-branco" onclick="redirectToWhatsApp('Assessoria Tributária')">
+                <i class="fas fa-balance-scale"></i>
+                <h3>Assessoria Tributária</h3>
+                <p>Otimização de tributos e redução de custos.</p>
+            </div>
+            <div class="servico-item bg-amarelo" onclick="redirectToWhatsApp('Assessoria Trabalhista')">
+                <i class="fas fa-briefcase"></i>
+                <h3>Assessoria Trabalhista</h3>
+                <p>Gestão de folha de pagamento e direitos trabalhistas.</p>
+            </div>
+            <div class="servico-item bg-branco" onclick="redirectToWhatsApp('Emissão de Notas Fiscais')">
+                <i class="fas fa-file-invoice"></i>
+                <h3>Emissão de Notas Fiscais</h3>
+                <p>Emissão e gestão de notas fiscais eletrônicas.</p>
+            </div>
+            <div class="servico-item bg-amarelo" onclick="redirectToWhatsApp('Parcelamento em Geral')">
+                <i class="fas fa-hand-holding-usd"></i>
+                <h3>Parcelamento em Geral</h3>
+                <p>Negociação de débitos fiscais e parcelamentos.</p>
+            </div>
+            <div class="servico-item bg-branco" onclick="redirectToWhatsApp('Alterações de Contrato Societário')">
+                <i class="fas fa-file-contract"></i>
+                <h3>Alterações de Contrato Societário</h3>
+                <p>Modificações no contrato social da sua empresa.</p>
+            </div>
+            <div class="servico-item bg-amarelo" onclick="redirectToWhatsApp('Alterações de Endereço')">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Alterações de Endereço</h3>
+                <p>Atualização do endereço da sua empresa.</p>
+            </div>
+            <div class="servico-item bg-branco" onclick="redirectToWhatsApp('Alterações de Capital Social')">
+                <i class="fas fa-coins"></i>
+                <h3>Alterações de Capital Social</h3>
+                <p>Ajustes no capital social da sua empresa.</p>
+            </div>
+            <div class="servico-item bg-amarelo" onclick="redirectToWhatsApp('Alterações de E-mail')">
+                <i class="fas fa-envelope"></i>
+                <h3>Alterações de E-mail</h3>
+                <p>Atualização do e-mail cadastrado.</p>
+            </div>
+            <div class="servico-item bg-branco" onclick="redirectToWhatsApp('Alterações de Telefone')">
+                <i class="fas fa-phone"></i>
+                <h3>Alterações de Telefone</h3>
+                <p>Atualização do telefone cadastrado.</p>
+            </div>
+        </div>
+    </section>
+ <!-- Rodapé -->
+ <footer>
+    <p>&copy; 2025 Ericson Contabilidade. Todos os direitos reservados.</p>
+</footer>
+</body>
+</html>
+<!-- Script para redirecionar para o WhatsApp -->
+<script>
+    function redirectToWhatsApp(service) {
+        // Número de telefone da empresa (substitua pelo seu número)
+        const phoneNumber = "5511991837551"; // Exemplo: 55 (Brasil) + DDD + Número
+
+        // Mensagem pré-definida
+        const message = `Olá, gostaria de contratar o serviço de ${service}.`;
+
+        // Codifica a mensagem para URL
+        const encodedMessage = encodeURIComponent(message);
+
+        // Cria o link do WhatsApp
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+        // Redireciona para o WhatsApp
+        window.open(whatsappURL, '_blank');
+    }
+</script>
